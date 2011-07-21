@@ -12,15 +12,15 @@ Batch analysis library for MDAnalysis.
 Depends
 =======
 
-numpy
+## numpy
 
     pip install numpy
 
-MDAnalysis
+## MDAnalysis
 
     easy_install -f http://code.google.com/p/mdanalysis/downloads/list MDAnalysis
 
-PyTables
+## PyTables
 
     git clone https://github.com/PyTables/PyTables; cd PyTables; python setup.py build; sudo python setup.py install
     
