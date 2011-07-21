@@ -1,4 +1,5 @@
 from tables import *
+from batcha.utils import split_path
 
 # import numpy
 # import os
