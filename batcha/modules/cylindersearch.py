@@ -1,10 +1,6 @@
-import os
 import numpy
 from numpy.linalg import norm
 
-import MDAnalysis
-from MDAnalysis.core.distances import self_distance_array
-from MDAnalysis.core.AtomGroup import AtomGroup
 import MDAnalysis.KDTree.NeighborSearch as NS
 
 import logging
