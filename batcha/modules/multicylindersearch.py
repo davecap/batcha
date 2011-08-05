@@ -60,8 +60,7 @@ class MultiCylinderSearch(object):
         seen_residues = []
         
         # for each defined path
-        for sel_a, sel_b in self.paths:
-            current_path_results = []
+        for path_index, (sel_a, sel_b) in enumerate(self.paths):
             a = sel_a.centerOfMass()
             b = sel_b.centerOfMass()
             midpoint = (a+b)/2.0
@@ -93,9 +92,7 @@ class MultiCylinderSearch(object):
                     if distance_to_b > height:
                         cylinder_offset = -1*cylinder_offset
                     # add the result to the current path result array
-                    current_path_results.append((name, cylinder_offset))
-            results.append(numpy.array(current_path_results))
-        
+                    results.append((name, path_index, cylinder_offset))
         self.timeseries.append(numpy.array(results))
 
     def results(self):
