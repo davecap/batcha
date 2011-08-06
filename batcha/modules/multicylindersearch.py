@@ -49,7 +49,7 @@ class MultiCylinderSearch(object):
         """ Prepare the trajectory (trj is a Universe object). No reference object is needed. """
         self.u = trj
         self.u.trajectory.rewind()
-        self.paths = [ (self.u.selectAtoms(a), self.u.selectAtoms(b)) for a,b in self.paths ]
+        self.path_selections = [ (self.u.selectAtoms(a), self.u.selectAtoms(b)) for (a,b) in self.paths ]
         self.search_atomgroup = self.u.selectAtoms(self.selection_search)
         self.timeseries = []  # final result
 
@@ -60,7 +60,7 @@ class MultiCylinderSearch(object):
         seen_residues = []
         
         # for each defined path
-        for path_index, (sel_a, sel_b) in enumerate(self.paths):
+        for path_index, (sel_a, sel_b) in enumerate(self.path_selections):
             a = sel_a.centerOfMass()
             b = sel_b.centerOfMass()
             midpoint = (a+b)/2.0
