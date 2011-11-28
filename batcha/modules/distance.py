@@ -42,8 +42,8 @@ class DistanceAnalysis(object):
 
     def process(self, frame):
         """ Process a single trajectory frame """
-	    r = self._s1.centerOfMass() - self._s2.centerOfMass()
-	    d = numpy.sqrt(numpy.sum(r*r))
+        r = self._s1.centerOfMass() - self._s2.centerOfMass()
+        d = numpy.sqrt(numpy.sum(r*r))
         self.timeseries.append(d)
         return d 
 
